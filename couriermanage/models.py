@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class Courier(models.Model):
+	service = models.CharField(max_length=255)
+	date_recieved = models.CharField(max_length=100)
+	student_roll_number = models.CharField(max_length=255)
