@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ACMS</title>
+	{% if title %}
+		<title>ACMS - {{ title }}</title>
+	{% else %}
+		<title>ACMS</title>
+	{% endif %}
 </head>
 <style type="text/css">
 	div {
