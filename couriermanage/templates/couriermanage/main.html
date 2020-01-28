@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	{% if title %}
-		<title>ACMS - {{ title }}</title>
-	{% else %}
-		<title>ACMS</title>
-	{% endif %}
+	<title>ACMS-Main</title>
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,13 +40,6 @@
   </div>
 </nav>
 <body>
-	{% if messages %}
-		{% for message in messages %}
-			<div>
-				{{ message }}
-			</div>
-		{% endfor %}
-	{% endif %}
-	{% block content %}{% endblock%}
+	<h1>Hello there</h1>
 </body>
 </html>

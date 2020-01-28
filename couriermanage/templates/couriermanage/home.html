@@ -7,18 +7,18 @@
 		<title>ACMS</title>
 	{% endif %}
 </head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <style type="text/css">
 	fieldset {
 		margin-right: 700px;
 		margin-left: 700px;
 	}
 	body {
-		
 	}
 </style>
 <body>
-	<h1 style="margin-top: 60px;"><center>Amrita Courier Management System (ACMS)</center></h1><br><br>
-	<div style="margin-top: 110px;">
+	<h1 style="margin-top: 60px";><center>Amrita Courier Management System (ACMS)</center></h1><br><br>
+	<div style="margin-top: 110px";>
 		<p><center>please visit room number abc to collect your package</center></p><br><br>
 		<div>
 			<center>
@@ -30,10 +30,10 @@
 						{{ form.as_p }}
 					</fieldset>
 					<div>
-						<button type="submit">Login</button>
+						<button class="btn btn-outline-info" type="submit">Login</button>
 					</div>
 				</form>
-			</div>
+			</div><br><br>
 			<p>Don't have an account? <a href="http://127.0.0.1:8000/register">Sign up</a></p>
 			<p>Are you an admin? <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">click here</a></p><br>
 			</center>
