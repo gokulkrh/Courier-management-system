@@ -7,4 +7,4 @@ def home(request):
 
 @login_required
 def main(request):
-	return render(request, 'couriermanage/main.html')
+	return render(request, 'couriermanage/main.html', {'title': 'main'})
