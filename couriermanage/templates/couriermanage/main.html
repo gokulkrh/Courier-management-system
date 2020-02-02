@@ -1,4 +1,19 @@
 {% extends "couriermanage/base.html" %}
 {% block content %}
-	<h1>Hello there</h1>
+<style type="text/css">
+  li {
+    border-width: 3px;
+    border-style: groove;
+    padding-left: 30px;
+    margin-right: 600px;
+  }
+</style>
+	<h1>Hello there</h1><br>
+  <h5>packages recieved as of now:</h5><br>
+    <ol>
+      {% for courier in couriers %}
+      <li><a href="#">{{ courier.name }}<br></a>{{ courier.service }}<br>{{ courier.date_recieved }}</li>
+      <br>
+      {% endfor %}
+    </ol>
 {% endblock content %}
