@@ -1,9 +1,9 @@
 {% extends "couriermanage/base.html" %}
 {% block content %}
-	<h2>Logged out</h2>	
+	<center>
+	<h1 style="padding-top: 100px;">You have been logged out</h1>	
 	<div>
-		<small>
-		Login again <a href="{% url 'service-home' %}">Sign in</a>
-	</small>
+		<a href="{% url 'service-home' %}"><h3>Log in again</h3></a>
 	</div>
+	</center>
 {% endblock content %}

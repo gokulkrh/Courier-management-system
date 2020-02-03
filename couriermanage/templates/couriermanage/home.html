@@ -18,24 +18,25 @@
 	}
 </style>
 <body>
-	<h1 style="margin-top: 60px";><center>Amrita Courier Management System (ACMS)</center></h1><br><br>
+	<h1 style="margin-top: 60px";><b><center>Amrita Courier Management System (ACMS)</b><a href="#"><img border="0" src="https://lh6.googleusercontent.com/proxy/n5IxjrSqxg2RLx-ms_tF3rWp8Tk5swSJduiGQo4OUFuM5d6au_Og81JpLsjXAtCe0HjGiestVg8s0ScjTKltr5RHejacK3CO3rFEWyx5MQctDgPGhnY-UMWmM9j_DVO7dJtrseA" width="200" height="150"></a></center></h1><br>
 	<div style="margin-top: 110px";>
-		<p><center>please visit room number s-004 to collect your package</center></p><br><br>
+		<p><center>Login using your Roll number.</center></p><br>
 		<div>
 			<center>
 			<div>
+				<legend>
 				<form method="POST">
 					{% csrf_token %}
 					<fieldset>
-						<legend></legend>
 						{{ form.as_p }}
 					</fieldset>
 					<div>
 						<button class="btn btn-outline-info" type="submit">Login</button>
 					</div>
 				</form>
+				</legend>
 			</div><br><br>
-			<p>Don't have an account? <a href="http://127.0.0.1:8000/register">Sign up</a></p>
+			<p>Not yet Registered? <a href="http://127.0.0.1:8000/register">Register now!</a></p>
 			<p>Are you an admin? <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">click here</a></p><br>
 			</center>
 		</div>
