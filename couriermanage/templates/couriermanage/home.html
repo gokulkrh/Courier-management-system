@@ -18,7 +18,14 @@
 	}
 </style>
 <body>
-	<h1 style="margin-top: 60px";><b><center>Amrita Courier Management System (ACMS)</b><a href="#"><img border="0" src="https://lh6.googleusercontent.com/proxy/n5IxjrSqxg2RLx-ms_tF3rWp8Tk5swSJduiGQo4OUFuM5d6au_Og81JpLsjXAtCe0HjGiestVg8s0ScjTKltr5RHejacK3CO3rFEWyx5MQctDgPGhnY-UMWmM9j_DVO7dJtrseA" width="200" height="150"></a></center></h1><br>
+	{% if messages %}
+		{% for message in messages %}
+			<div>
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
+	<h1 style="margin-top: 60px";><b><center>Amrita Courier Management System (ACMS)</b><a href="{% url 'about' %}"><img border="0" src="https://lh6.googleusercontent.com/proxy/n5IxjrSqxg2RLx-ms_tF3rWp8Tk5swSJduiGQo4OUFuM5d6au_Og81JpLsjXAtCe0HjGiestVg8s0ScjTKltr5RHejacK3CO3rFEWyx5MQctDgPGhnY-UMWmM9j_DVO7dJtrseA" width="200" height="150"></a></center></h1><br>
 	<div style="margin-top: 110px";>
 		<p><center>Login using your Roll number.</center></p><br>
 		<div>

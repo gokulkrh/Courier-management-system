@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView
 from django.db.models import Q
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib.auth.decorators import login_required
 from .models import Courier
 
@@ -17,6 +19,9 @@ def main(request):
 	couriers = search(query)
 	return render(request, 'couriermanage/main.html', {'couriers': couriers})
 
+class mainview(ListView):
+	model = Courier
+
 
 def search(query=None):
 	queryset = []
@@ -31,3 +36,7 @@ def search(query=None):
 			queryset.append(courier)
 
 	return list(set(queryset))
+
+
+def about(request):
+	return render(request, 'couriermanage/about.html', {'title': 'About'})
