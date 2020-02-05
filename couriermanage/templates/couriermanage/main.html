@@ -1,23 +1,36 @@
 {% extends "couriermanage/base.html" %}
 {% block content %}
 <style type="text/css">
-  li {
-    border-width: 3px;
-    border-style: groove;
-    padding-left: 30px;
-    margin-right: 1300px;
-  }
 </style>
-  <h1 style="padding-left: 20px;">Hello there</h1><br>
+  <h1 style="padding-left: 20px;">Welcome :)</h1><br>
   <h5 style="padding-left: 20px;">Please visit room number s-004 to collect your package.</h5>
   <h5 style="padding-left: 20px;">Packages recieved as of now: </h5><br>
-  {% if couriers %}
+  {% if page_obj %}
     <ol>
-      {% for courier in couriers %}
-      <li>{{ courier.name }}<br>{{ courier.service }}<br>{{ courier.date_recieved }}</li>
-      <br>
+      {% for courier in page_obj %}
+      <div class="card" style="width: 25rem;">
+        <div class="card-body" style="padding-left: 45px;">
+          <li>
+            <h5 class="card-title">{{ courier.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ courier.student_rollno }}</h6>
+            <p class="card-text">date recieved: {{ courier.date_recieved }}</p>
+            <p class="card-text">service: {{ courier.service }}</p>
+          </li>
+        </div>
+      </div><br>
       {% endfor %}
     </ol>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number }}">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+        {% endif %}
+      </ul>
+    </nav>
   {% else %}
     <center>
     <div style="margin-top: 170px">

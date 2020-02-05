@@ -11,32 +11,17 @@ def home(request):
 
 @login_required
 def main(request):
-	context = {}
-	query = ""
-	if request.GET:
-		query = request.GET['q']
-		context['query'] = str(query)
-	couriers = search(query)
-	return render(request, 'couriermanage/main.html', {'couriers': couriers})
-
-class mainview(ListView):
-	model = Courier
-
-
-def search(query=None):
-	queryset = []
-	queries = query.split(" ")
-	for q in queries:
+	couriers = Courier.objects.all()
+	query = request.GET.get('q')
+	if query:
 		couriers = Courier.objects.filter(
-			Q(student_rollno__icontains=q) |
-			Q(date_recieved__icontains=q) |
-			Q(service__icontains=q)
-		)
-		for courier in couriers:
-			queryset.append(courier)
-
-	return list(set(queryset))
-
+			Q(student_rollno__icontains=query) | Q(date_recieved__icontains=query) |
+			Q(service__icontains=query)
+			)
+	paginator = Paginator(couriers, 10)
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+	return render(request, 'couriermanage/main.html', {'page_obj': page_obj})
 
 def about(request):
 	return render(request, 'couriermanage/about.html', {'title': 'About'})
