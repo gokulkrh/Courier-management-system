@@ -44,8 +44,8 @@
 				</form>
 				</legend>
 			</div><br><br>
-			<p>Not yet Registered? <a href="http://127.0.0.1:8000/register">Register now!</a></p>
-			<p>Are you an admin? <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">click here</a></p><br>
+			<p>Not yet Registered? <a href="{% url 'register' %}">Register now!</a></p>
+			<p>Are you an admin? <a href="{% url 'admin:login' %}">click here</a></p><br>
 			</center>
 		</div>
 	</div>
